@@ -1,14 +1,16 @@
 #!/usr/bin/env groovy
-@Grab('org.apache.commons:commons-math3:3.4.1')
-import org.apache.commons.math3.primes.Primes
 
-void parallelize(int count) {
-  if (!Primes.isPrime(count)) {
-    error "${count} was not prime"
+import sayBye
+
+def call(String agent = 'any') {
+  pipeline {
+    agent ${agent}
+    stages {
+      stage('A') {
+        steps {
+          echo "This is Step A"
+        }
+      }
+    }
   }
-}
-
-def call(String name = 'human') {
-  echo "Hello, ${name}."
-  parallelize(2)
 }
