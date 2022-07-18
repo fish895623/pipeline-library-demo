@@ -1,4 +1,13 @@
 
 def call(String agent = 'any') {
-    echo ${agent}
+  pipeline {
+    agent '${agent}'
+    stages {
+      stage('A') {
+        steps {
+          echo "This is Step A"
+        }
+      }
+    }
+  }
 }
