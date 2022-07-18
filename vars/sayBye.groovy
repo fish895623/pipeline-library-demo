@@ -1,5 +1,5 @@
 
-def call(String agent = 'any') {
+def call(agent = any) {
   pipeline {
     agent ${agent}
     stages {
