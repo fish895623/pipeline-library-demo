@@ -1,7 +1,7 @@
 
 def call(String agent = 'any') {
   pipeline {
-    agent '${agent}'
+    agent ${agent}
     stages {
       stage('A') {
         steps {
