@@ -10,5 +10,5 @@ void parallelize(int count) {
 
 def call(String name = 'human') {
   echo "Hello, ${name}."
-  parallelize(3)
+  parallelize(2)
 }
